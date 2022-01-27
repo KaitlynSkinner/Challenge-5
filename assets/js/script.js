@@ -1,5 +1,4 @@
 var calEvent = {};
-var currentClock = moment().format('h');
 var nine = $(".description")[0];
 var ten = $(".description")[1];
 var eleven = $(".description")[2];
@@ -9,11 +8,6 @@ var two = $(".description")[5];
 var three = $(".description")[6];
 var four = $(".description")[7];
 var five = $(".description")[8];
-
-console.log("Current clock:", currentClock);
-
-//var timeId = parseInt($(this).attr('.description'));
-//console.log(timeId);
 
 /*
 var cal_data = [];
@@ -43,15 +37,24 @@ fetch(url)
 var todaysDate = moment().format("dddd, MMMM, DD"); //- check if tomorrow below date is tomorrows date
 $("#currentDay").append(todaysDate);
 
-
+// .past if 
 var pastPresentFuture = function() {
-    if (currentHour) {
-        $(this).attr("past");
-    } else if (currentHour === ten) {
-        $(this).attr("present");
-    } else if (currentHour === twelve) {
-        $(this).attr("future")
-    }
+    var currentHour = moment().format('h');
+    console.log("Current hour:", currentHour);
+
+    $(".description").each(function() {
+        var timeId = parseInt($(this).attr('id'));
+        console.log(timeId);
+
+        if (currentHour < timeId) {
+            $(this).attr("past");
+        } else if (currentHour > timeId) {
+            $(this).attr("future");
+        } else if (currentHour === timeId) {
+            $(this).attr("present")
+        }
+        console.log(this);
+    });
 };
 pastPresentFuture();
 

@@ -40,6 +40,7 @@ textarea{
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  padding: 15px;
 }
 
 .past {
@@ -72,11 +73,6 @@ textarea{
 }
 
 /* My added CSS 
-.cal-list {
-  justify-content: center;
-  width: 100%;
-}
-
 .cal-list-label {
   border-top: 2px dotted black;
   font-size: 20px;
