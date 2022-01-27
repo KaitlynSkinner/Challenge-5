@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
+
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+      <p id="holiday" class="lead"></p>
+    </header>
+    <div class="container">
+      <!-- Timeblocks go here -->
+      <form id="cal-event" class="col-12 time-block">
+         <!-- 9AM -->
+        <label for="time" class="hour">9AM</label>
+        <input id="time" class="col-md-10 textarea description" type="text"></input>
+        <button class="saveBtn" type="submit"></button>
+
+        <!-- 10AM -->
+        <label for="time" class="hour">10AM</label>
+        <input id="time" class="col-md-10 textarea description" type="text"></input>
+        <button class="saveBtn" type="submit"></button>
+
+        <!-- 11AM -->
+        <label for="time" class="hour">11AM</label>
+        <input id="time" class="col-md-10 textarea description" type="text"></input>
+        <button class="saveBtn" type="submit"></button>
+
+        <!-- 12PM -->
+        <label for="time" class="hour">12PM</label>
+        <input id="time" class="col-md-10 textarea description" type="text"></input>
+        <button class="saveBtn" type="submit"></button>
+
+        <!-- 1PM -->
+        <label for="time" class="hour">1PM</label>
+        <input id="time" class="col-md-10 textarea description" type="text"></input>
+        <button class="saveBtn" type="submit"></button>
+
+        <!-- 2PM -->
+        <label for="time" class="hour">2PM</label>
+        <input id="time" class="col-md-10 textarea description" type="text"></input>
+        <button class="saveBtn" type="submit"></button>
+
+        <!-- 3PM -->
+        <label for="time" class="hour">3PM</label>
+        <input id="time" class="col-md-10 textarea description" type="text"></input>
+        <button class="saveBtn" type="submit"></button>
+
+        <!-- 4PM -->
+        <label for="time" class="hour">4PM</label>
+        <input id="time" class="col-md-10 textarea description" type="text"></input>
+        <button class="saveBtn" type="submit"></button>
+
+        <!-- 5PM -->
+        <label for="time" class="hour">5PM</label>
+        <input id="time" class="col-md-10 textarea description" type="text"></input>
+        <button class="saveBtn" type="submit"></button>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
