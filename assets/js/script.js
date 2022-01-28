@@ -21,10 +21,11 @@ fetch(url)
 
             if (holidayDate === compareDate) {
                 jumboHoliday.append(holidayName);
-            } else {
-                jumboHoliday.append("Holidays Display Here!")
-                    .trim();
-            }
+            } 
+            //else {
+              //  jumboHoliday.append("Holidays Display Here!")
+                //    .trim();
+            //}
         }
     });
 
@@ -60,47 +61,48 @@ pastPresentFuture();
 var nineId = $("#9");
 var tenId = $("#10");
 var elevenId = $("#11");
-var twelveId = $("12");
+var twelveId = $("#12");
 var oneId = $("#13");
 var twoId = $("#14");
 var threeId = $("#15");
 var fourId = $("#16");
 var fiveId = $("#17");
 
-//When the save button is clicked, set/get localStorage for each textarea's Calander Events that will be typed by the user
-$("#saveBtn").on("click", function(e) {
-    e.preventDefault();
+var calEvent = {};
 
-    // Get the textarea id's and the trimmed value of user's calander events
-    var calEvent = {
-        nine: nineId.val.trim(),
-        ten: tenId.val.trim(),
-        eleven: elevenId.val.trim(),
-        twelve: twelveId.val.trim(),
-        one: oneId.val.trim(),
-        two: twoId.val.trim(),
-        three: threeId.val.trim(),
-        four: fourId.val.trim(),
-        five: fiveId.val.trim(),
-    };
+window.onbeforeunload = function(){
+    //When the save button is clicked, set/get localStorage for each textarea's Calander Events that will be typed by the user
+    $(".saveBtn").on("click", function(e) {
+        e.preventDefault();
 
-    // Local Storage for set/get user's calendar events
-    localStorage.setItem('calEvent', JSON.stringify(calEvent));
-    var calEventMemory = localStorage.getItem('calEvent');
-    calEventMemory = JSON.parse(calEventMemory);
+        // Get the textarea id's and the trimmed value of user's calander events
+        var calEvent = {
+            nine: nineId.val().trim(),
+            ten: tenId.val().trim(),
+            eleven: elevenId.val().trim(),
+            twelve: twelveId.val().trim(),
+            one: oneId.val().trim(),
+            two: twoId.val().trim(),
+            three: threeId.val().trim(),
+            four: fourId.val().trim(),
+            five: fiveId.val().trim(),
+        };
 
-        console.log(calEvent.nine);
-        console.log(calEvent.ten);
-        console.log(calEvent.eleven);
-        console.log(calEvent.twelve);
-        console.log(calEvent.one);
-        console.log(calEvent.two);
-        console.log(calEvent.three);
-        console.log(calEvent.four);
-        console.log(calEvent.five);
-});
-//WHEN I click the save button for that timeblock
-//THEN the text for that event is saved in local storage
+        // Local Storage for set/get user's calendar events
+        localStorage.setItem('calEvent', JSON.stringify(calEvent));
+        var calEventMemory = localStorage.getItem('calEvent');
+        calEventMemory = JSON.parse(calEventMemory);
+            console.log(calEvent.nine);
+            console.log(calEvent.ten);
+            console.log(calEvent.eleven);
+            console.log(calEvent.twelve);
+            console.log(calEvent.one);
+            console.log(calEvent.two);
+            console.log(calEvent.three);
+            console.log(calEvent.four);
+            console.log(calEvent.five);
+    });
+};
 //WHEN I refresh the page
 //THEN the saved events persist
 
