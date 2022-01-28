@@ -9,29 +9,35 @@ var three = $(".description")[6];
 var four = $(".description")[7];
 var five = $(".description")[8];
 
-/*
+
 var cal_data = [];
 
 var holidays = document.getElementById("#holidays");
 var url = "https://calendarific.com/api/v2/holidays?api_key=0b1a8fe3ecd9fd08d231e319583a5bc0dfeb0f85&country=CA&year=2022";
-
+ 
 fetch(url)
     .then(function (response) {
         return response.json();
     })
     .then (function (cal_data) {
         console.log(cal_data);
-        var holidaysEl = cal_data.response.holidays;
-        console.log(holidaysEl);
+        var holidays = cal_data.response.holidays;
+        console.log(holidays);
 
-        if (!todaysDate) {
-           holidayName.textContent = cal_data.response.holidays.name;
-           holidayDate.textContent = cal_data.response.holidays.date;
-        holidays.append(holidayName, holidayDate);
+        // For loop through holidays
+        for (var i = 0; i < holidays.length; i++) {
+            var holidayDate = holidays[i].date.iso;
+            holidayDate.
+            console.log(todaysDate);
+            console.log(holidayDate);
+            
+
+            //compare holidayDate with todaysDate
+            // if holidayDate === todaysDate get the name 
+            //then append the name to the <div>
         }
-        return holidays;
     });
-*/
+
 
 // Today's date in header
 var todaysDate = moment().format("dddd, MMMM, DD"); //- check if tomorrow below date is tomorrows date
@@ -39,21 +45,21 @@ $("#currentDay").append(todaysDate);
 
 // .past if 
 var pastPresentFuture = function() {
-    var currentHour = moment().format('h');
-    console.log("Current hour:", currentHour);
+    var currentHour = moment().format('H');
+    //console.log("Current hour:", currentHour);
 
     $(".description").each(function() {
         var timeId = parseInt($(this).attr('id'));
-        console.log(timeId);
+        //console.log(timeId);
 
         if (currentHour < timeId) {
-            $(this).attr("past");
+            $(this).addClass("past");
         } else if (currentHour > timeId) {
-            $(this).attr("future");
+            $(this).addClass("future");
         } else if (currentHour === timeId) {
-            $(this).attr("present")
+            $(this).addClass("present")
         }
-        console.log(this);
+        //console.log(this);
     });
 };
 pastPresentFuture();

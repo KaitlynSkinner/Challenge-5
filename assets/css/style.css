@@ -78,14 +78,32 @@ textarea{
   font-size: 20px;
 }
 */
-@media (max-width: 980px) {
+
+/*
+/* No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }` */
+@include media-breakpoint-up(sm) { ... }
+@include media-breakpoint-up(md) { ... }
+@include media-breakpoint-up(lg) { ... }
+@include media-breakpoint-up(xl) { ... }
+*/
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-wifth: 1200px) {
+  
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
 
 }
 
-@media (max-width: 780px) {
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
 
 }
 
-@media (max-width: 575) {
+/* Small devices (landscape phones, less than 576px) */
+@media (max-width: 576px) {
 
 }
+/* No media query ffor 'xs' as this is the default in Bootstrap */
