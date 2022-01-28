@@ -72,12 +72,11 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
-/* My added CSS 
-.cal-list-label {
-  border-top: 2px dotted black;
-  font-size: 20px;
+/* My added CSS */
+.container {
+  margin: auto;
 }
-*/
+
 
 /*
 /* No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }` */
