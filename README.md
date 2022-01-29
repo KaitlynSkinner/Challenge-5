@@ -6,16 +6,16 @@ To create an application, a work day scheduler with colour-coded time slots and 
 
 ## Features
 
-###Text Area
+**Text Area**
     - User is able to input an event or task 
 
-
-###Colour Coded Time Slots
+**Colour Coded Time Slots**
     - (9:00 AM) - (5:00 PM)
     - Grey: to indicate time is in the past
     - Green: to indicate time is in the future
     - Red: to indicate it is the present time
 
+**Usage**
 The user is presented with a title and description.
 
 The user is presented with the current date and a holiday applicable to that date.
@@ -30,4 +30,4 @@ Work Day Scheduler - Deployed URL = https://kaitlynskinner.github.io/Challenge-5
 
 Git Hub - Repository URL = https://github.com/KaitlynSkinner/Challenge-5.git
 
-![Deployed Application](https://github.com/KaitlynSkinner/Challenge-4/blob/aff17dbe94713a77c6a4d500a472dfbc53b93b61/assets/images/Challenge-4-Mockup.png?raw=true)
+![Deployed Application](https://github.com/KaitlynSkinner/Challenge-5/blob/2777c4776fcf7bf8d8b291a70145261d1d72da5c/assets/images/Workday-Scheduler-Mockup.png?raw=true)
