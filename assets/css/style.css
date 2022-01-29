@@ -77,6 +77,18 @@ textarea{
   margin: auto;
 }
 
+.deleteBtn {
+  border-left: 1px solid black;
+  background-color: #06AED5;
+  color: white;
+  padding: 15px 15px 15px 15px;
+}
+
+.deleteBtn i:hover {
+  font-size: 20px;
+  transition: all .3s ease-in-out;
+}
+
 
 /*
 /* No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }` */

@@ -22,10 +22,10 @@ fetch(url)
             if (holidayDate === compareDate) {
                 jumboHoliday.append(holidayName);
             } 
-            //else {
-              //  jumboHoliday.append("Holidays Display Here!")
-                //    .trim();
-            //}
+            else {
+                jumboHoliday.append("Holidays Display Here!")
+                    break;
+            }
         }
     });
 
@@ -44,6 +44,7 @@ var pastPresentFuture = function() {
     $(".description").each(function() {
         var timeId = parseInt($(this).attr('id'));
         //console.log(timeId);
+        //var timeId = parseInt($(this).attr('data-id').val(), 10);
 
         if (currentHour < timeId) {
             $(this).addClass("future");
@@ -55,67 +56,62 @@ var pastPresentFuture = function() {
         //console.log(this);
     });
 };
-pastPresentFuture();
 
 // Variable to store the "time" id of the textarea
-var nineId = $("#9");
-var tenId = $("#10");
-var elevenId = $("#11");
-var twelveId = $("#12");
-var oneId = $("#13");
-var twoId = $("#14");
-var threeId = $("#15");
-var fourId = $("#16");
-var fiveId = $("#17");
+var nineEl = $("#9");
+var tenEl = $("#10");
+var elevenEl = $("#11");
+var twelveEl = $("#12");
+var oneEl = $("#13");
+var twoEl = $("#14");
+var threeEl = $("#15");
+var fourEl = $("#16");
+var fiveEl = $("#17");
 
-var calEvent = {};
+var calEvent = "";
 
-window.onbeforeunload = function(){
+$(document).ready(function() {     
+    renderData();       
     //When the save button is clicked, set/get localStorage for each textarea's Calander Events that will be typed by the user
-    $(".saveBtn").on("click", function(e) {
+    $(".row").on("click", "button", function(e) {
         e.preventDefault();
 
         // Get the textarea id's and the trimmed value of user's calander events
         var calEvent = {
-            nine: nineId.val().trim(),
-            ten: tenId.val().trim(),
-            eleven: elevenId.val().trim(),
-            twelve: twelveId.val().trim(),
-            one: oneId.val().trim(),
-            two: twoId.val().trim(),
-            three: threeId.val().trim(),
-            four: fourId.val().trim(),
-            five: fiveId.val().trim(),
+            nine: nineEl.val().trim(),
+            ten: tenEl.val().trim(),
+            eleven: elevenEl.val().trim(),
+            twelve: twelveEl.val().trim(),
+            one: oneEl.val().trim(),
+            two: twoEl.val().trim(),
+            three: threeEl.val().trim(),
+            four: fourEl.val().trim(),
+            five: fiveEl.val().trim(),
         };
 
         // Local Storage for set/get user's calendar events
         localStorage.setItem('calEvent', JSON.stringify(calEvent));
-        var calEventMemory = localStorage.getItem('calEvent');
-        calEventMemory = JSON.parse(calEventMemory);
-            console.log(calEvent.nine);
-            console.log(calEvent.ten);
-            console.log(calEvent.eleven);
-            console.log(calEvent.twelve);
-            console.log(calEvent.one);
-            console.log(calEvent.two);
-            console.log(calEvent.three);
-            console.log(calEvent.four);
-            console.log(calEvent.five);
     });
-};
-//WHEN I refresh the page
-//THEN the saved events persist
+    pastPresentFuture();
+});
 
-/*
-// Create an event in the Calander when typing in the input to edit and save
-var createEvent = function() {
-    
-    $(".container").append();
+// When refreshing the page, then the data and saved event persists
+var renderData = function() {
+    // Parse into a string of objects
+    var calEventMemory = localStorage.getItem('calEvent');
+    calEventMemory = JSON.parse(calEventMemory);
+    console.log(calEventMemory);
 
-    calEvent.push({
-        text: 
-    })
-    saveCalEvent();
+    // Loop over all enumerable properties of the calEventMemory(calEvent) object, keyed by strings
+    for (var key in calEventMemory) {
+        nineEl.text(calEventMemory["nine"]);
+        tenEl.text(calEventMemory["ten"]);
+        elevenEl.text(calEventMemory["eleven"]);
+        twelveEl.text(calEventMemory["twelve"]);
+        oneEl.text(calEventMemory["one"]);
+        twoEl.text(calEventMemory["two"]);
+        threeEl.text(calEventMemory["three"]);
+        fourEl.text(calEventMemory["four"]);
+        fiveEl.text(calEventMemory["five"]);
+    }
 };
-createEvent();
-*/
