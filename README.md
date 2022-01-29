@@ -6,16 +6,16 @@ To create an application, a work day scheduler with colour-coded time slots and 
 
 ## Features
 
-**Text Area**
+### Text Area ###
     - User is able to input an event or task 
 
-**Colour Coded Time Slots**
+### Colour Coded Time Slots ###
     - (9:00 AM) - (5:00 PM)
     - Grey: to indicate time is in the past
     - Green: to indicate time is in the future
     - Red: to indicate it is the present time
 
-**Usage**
+## Usage
 The user is presented with a title and description.
 
 The user is presented with the current date and a holiday applicable to that date.
