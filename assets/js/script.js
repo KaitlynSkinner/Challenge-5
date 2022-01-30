@@ -78,7 +78,7 @@ $(document).ready(function() {
 
         // Get the textarea id's and the trimmed value of user's calander events
         var calEvent = {
-            nine: nineEl.val().trim(),
+            
             ten: tenEl.val().trim(),
             eleven: elevenEl.val().trim(),
             twelve: twelveEl.val().trim(),
